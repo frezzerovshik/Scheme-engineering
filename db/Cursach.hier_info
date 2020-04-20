@@ -1,0 +1,103 @@
+|Cursach
+
+
+|Cursach|counter:COUNTER_1
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+clk => cnt[0]~reg0.CLK
+clk => cnt[1]~reg0.CLK
+clk => cnt[2]~reg0.CLK
+clk => cnt[3]~reg0.CLK
+cnt[0] <= cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[1] <= cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[2] <= cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[3] <= cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|counter:COUNTER_2
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+clk => cnt[0]~reg0.CLK
+clk => cnt[1]~reg0.CLK
+clk => cnt[2]~reg0.CLK
+clk => cnt[3]~reg0.CLK
+cnt[0] <= cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[1] <= cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[2] <= cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[3] <= cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|comparator:COMPARATOR_1
+A => always0.IN0
+A => LessThan0.IN1
+B => always0.IN1
+B => LessThan0.IN2
+aLessThanB <= aLessThanB.DB_MAX_OUTPUT_PORT_TYPE
+aMoreThanB <= aMoreThanB.DB_MAX_OUTPUT_PORT_TYPE
+aEqualB <= always0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|comparator:COMPARATOR_2
+A => always0.IN0
+A => LessThan0.IN1
+B => always0.IN1
+B => LessThan0.IN2
+aLessThanB <= aLessThanB.DB_MAX_OUTPUT_PORT_TYPE
+aMoreThanB <= aMoreThanB.DB_MAX_OUTPUT_PORT_TYPE
+aEqualB <= always0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|twoInputXor:forALessThanB
+firstIn => out.IN0
+secondIn => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|twoInputXor:forAMoreThanB
+firstIn => out.IN0
+secondIn => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|twoInputXor:forAEqualThanB
+firstIn => out.IN0
+secondIn => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|twoInputOr:forAandCOutputs
+firstIn => out.IN0
+secondIn => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|twoInputOr:lastLevel
+firstIn => out.IN0
+secondIn => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|clockwise:firstClock
+clk <= clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|clockwise:secondClock
+clk <= clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|twoInputOr:forFirstClock
+firstIn => out.IN0
+secondIn => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|twoInputOr:forSecondClock
+firstIn => out.IN0
+secondIn => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
