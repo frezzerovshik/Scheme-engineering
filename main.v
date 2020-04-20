@@ -100,14 +100,14 @@ module Cursach ();
 	wire [3:0] value_1;
 	wire [3:0] value_2;
 	
-	counter COUNTER_1(1,0,value_1);
-	counter COUNTER_2(1,0,value_2);
+
+
 	comparator COMPARATOR_1(value_1,value_2,aLessThanB_1,aMoreThanB_1,aEqualB_1);
 	comparator COMPARATOR_2(value_1,value_2,aLessThanB_2,aMoreThanB_2,aEqualB_2);
 	
 	twoInputXor forALessThanB (aLessThanB_1,aLessThanB_2, out_1);
 	twoInputXor forAMoreThanB (aMoreThanB_1,aMoreThanB_2, out_2);
-	twoInputXor forAEqualThanB (aEqualB_1,aEqualThanB_2, out_3);
+	twoInputXor forAEqualB (aEqualB_1,aEqualB_2, out_3);
 	
 	twoInputOr forAandCOutputs (out_1,out_3, out_ac);
 	twoInputOr lastLevel (out_2,out_ac,result);
@@ -117,8 +117,8 @@ module Cursach ();
 	
 	twoInputOr forFirstClock (clockOutput_1,result, clockForFirstCounter);
 	twoInputOr forSecondClock (clockOutput_2,result,clockForSecondCounter);
-	
-	
-	
+
+	counter COUNTER_1(1,clockForFirstCounter,value_1);
+	counter COUNTER_2(1,clockForSecondCounter,value_2);
 endmodule 
 

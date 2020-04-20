@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Cursach
-Mon Apr 20 22:30:42 2020
+Mon Apr 20 23:07:20 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -10,13 +10,11 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
   4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "twoInputOr:forSecondClock"
-  6. Port Connectivity Checks: "twoInputOr:forFirstClock"
+  5. Port Connectivity Checks: "counter:COUNTER_2"
+  6. Port Connectivity Checks: "counter:COUNTER_1"
   7. Port Connectivity Checks: "comparator:COMPARATOR_2"
   8. Port Connectivity Checks: "comparator:COMPARATOR_1"
-  9. Port Connectivity Checks: "counter:COUNTER_2"
- 10. Port Connectivity Checks: "counter:COUNTER_1"
- 11. Analysis & Elaboration Messages
+  9. Analysis & Elaboration Messages
 
 
 
@@ -43,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Mon Apr 20 22:30:42 2020       ;
+; Analysis & Elaboration Status      ; Successful - Mon Apr 20 23:07:20 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; Cursach                                     ;
 ; Top-level Entity Name              ; Cursach                                     ;
@@ -162,33 +160,34 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "twoInputOr:forSecondClock"                                                          ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:COUNTER_2"                                                                                                                                                                     ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; reset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "twoInputOr:forFirstClock"                                                           ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:COUNTER_1"                                                                                                                                                                     ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; reset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "comparator:COMPARATOR_2"                                                                                                                                                            ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; A       ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; B       ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; aEqualB ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparator:COMPARATOR_2"                                                                                                                                                        ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; B    ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -201,39 +200,13 @@ https://fpgasoftware.intel.com/eula.
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:COUNTER_2"                                                                                                                                                                      ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; reset     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; reset[-1] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; clk       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; clk[-1]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; cnt[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:COUNTER_1"                                                                                                                                                                      ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; reset     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; reset[-1] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; clk       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; clk[-1]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; cnt[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-+-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Apr 20 22:30:35 2020
+    Info: Processing started: Mon Apr 20 23:07:13 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Cursach -c Cursach --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -244,37 +217,36 @@ Info (12021): Found 6 design units, including 6 entities, in source file main.v
     Info (12023): Found entity 4: twoInputOr File: E:/Quartus-Lite/Cursach/main.v Line: 77
     Info (12023): Found entity 5: twoInputXor File: E:/Quartus-Lite/Cursach/main.v Line: 88
     Info (12023): Found entity 6: Cursach File: E:/Quartus-Lite/Cursach/main.v Line: 99
-Warning (10236): Verilog HDL Implicit Net warning at main.v(123): created implicit net for "aLessThanB_1" File: E:/Quartus-Lite/Cursach/main.v Line: 123
-Warning (10236): Verilog HDL Implicit Net warning at main.v(123): created implicit net for "aMoreThanB_1" File: E:/Quartus-Lite/Cursach/main.v Line: 123
-Warning (10236): Verilog HDL Implicit Net warning at main.v(123): created implicit net for "aEqualB_1" File: E:/Quartus-Lite/Cursach/main.v Line: 123
-Warning (10236): Verilog HDL Implicit Net warning at main.v(124): created implicit net for "aLessThanB_2" File: E:/Quartus-Lite/Cursach/main.v Line: 124
-Warning (10236): Verilog HDL Implicit Net warning at main.v(124): created implicit net for "aMoreThanB_2" File: E:/Quartus-Lite/Cursach/main.v Line: 124
-Warning (10236): Verilog HDL Implicit Net warning at main.v(124): created implicit net for "aEqualB_2" File: E:/Quartus-Lite/Cursach/main.v Line: 124
-Warning (10236): Verilog HDL Implicit Net warning at main.v(126): created implicit net for "out_1" File: E:/Quartus-Lite/Cursach/main.v Line: 126
-Warning (10236): Verilog HDL Implicit Net warning at main.v(127): created implicit net for "out_2" File: E:/Quartus-Lite/Cursach/main.v Line: 127
-Warning (10236): Verilog HDL Implicit Net warning at main.v(128): created implicit net for "aEqualThanB_2" File: E:/Quartus-Lite/Cursach/main.v Line: 128
-Warning (10236): Verilog HDL Implicit Net warning at main.v(128): created implicit net for "out_3" File: E:/Quartus-Lite/Cursach/main.v Line: 128
-Warning (10236): Verilog HDL Implicit Net warning at main.v(130): created implicit net for "out_ac" File: E:/Quartus-Lite/Cursach/main.v Line: 130
-Warning (10236): Verilog HDL Implicit Net warning at main.v(131): created implicit net for "result" File: E:/Quartus-Lite/Cursach/main.v Line: 131
-Warning (10236): Verilog HDL Implicit Net warning at main.v(133): created implicit net for "clockOutput_1" File: E:/Quartus-Lite/Cursach/main.v Line: 133
-Warning (10236): Verilog HDL Implicit Net warning at main.v(134): created implicit net for "clockOutput_2" File: E:/Quartus-Lite/Cursach/main.v Line: 134
-Warning (10236): Verilog HDL Implicit Net warning at main.v(136): created implicit net for "clockForFirstCounter" File: E:/Quartus-Lite/Cursach/main.v Line: 136
-Warning (10236): Verilog HDL Implicit Net warning at main.v(137): created implicit net for "clockForSecondCounter" File: E:/Quartus-Lite/Cursach/main.v Line: 137
+Warning (10236): Verilog HDL Implicit Net warning at main.v(105): created implicit net for "aLessThanB_1" File: E:/Quartus-Lite/Cursach/main.v Line: 105
+Warning (10236): Verilog HDL Implicit Net warning at main.v(105): created implicit net for "aMoreThanB_1" File: E:/Quartus-Lite/Cursach/main.v Line: 105
+Warning (10236): Verilog HDL Implicit Net warning at main.v(105): created implicit net for "aEqualB_1" File: E:/Quartus-Lite/Cursach/main.v Line: 105
+Warning (10236): Verilog HDL Implicit Net warning at main.v(106): created implicit net for "aLessThanB_2" File: E:/Quartus-Lite/Cursach/main.v Line: 106
+Warning (10236): Verilog HDL Implicit Net warning at main.v(106): created implicit net for "aMoreThanB_2" File: E:/Quartus-Lite/Cursach/main.v Line: 106
+Warning (10236): Verilog HDL Implicit Net warning at main.v(106): created implicit net for "aEqualB_2" File: E:/Quartus-Lite/Cursach/main.v Line: 106
+Warning (10236): Verilog HDL Implicit Net warning at main.v(108): created implicit net for "out_1" File: E:/Quartus-Lite/Cursach/main.v Line: 108
+Warning (10236): Verilog HDL Implicit Net warning at main.v(109): created implicit net for "out_2" File: E:/Quartus-Lite/Cursach/main.v Line: 109
+Warning (10236): Verilog HDL Implicit Net warning at main.v(110): created implicit net for "out_3" File: E:/Quartus-Lite/Cursach/main.v Line: 110
+Warning (10236): Verilog HDL Implicit Net warning at main.v(112): created implicit net for "out_ac" File: E:/Quartus-Lite/Cursach/main.v Line: 112
+Warning (10236): Verilog HDL Implicit Net warning at main.v(113): created implicit net for "result" File: E:/Quartus-Lite/Cursach/main.v Line: 113
+Warning (10236): Verilog HDL Implicit Net warning at main.v(115): created implicit net for "clockOutput_1" File: E:/Quartus-Lite/Cursach/main.v Line: 115
+Warning (10236): Verilog HDL Implicit Net warning at main.v(116): created implicit net for "clockOutput_2" File: E:/Quartus-Lite/Cursach/main.v Line: 116
+Warning (10236): Verilog HDL Implicit Net warning at main.v(118): created implicit net for "clockForFirstCounter" File: E:/Quartus-Lite/Cursach/main.v Line: 118
+Warning (10236): Verilog HDL Implicit Net warning at main.v(119): created implicit net for "clockForSecondCounter" File: E:/Quartus-Lite/Cursach/main.v Line: 119
 Info (12127): Elaborating entity "Cursach" for the top level hierarchy
-Info (12128): Elaborating entity "counter" for hierarchy "counter:COUNTER_1" File: E:/Quartus-Lite/Cursach/main.v Line: 121
-Warning (10230): Verilog HDL assignment warning at main.v(38): truncated value with size 32 to match size of target (4) File: E:/Quartus-Lite/Cursach/main.v Line: 38
-Info (12128): Elaborating entity "comparator" for hierarchy "comparator:COMPARATOR_1" File: E:/Quartus-Lite/Cursach/main.v Line: 123
-Info (12128): Elaborating entity "twoInputXor" for hierarchy "twoInputXor:forALessThanB" File: E:/Quartus-Lite/Cursach/main.v Line: 126
-Info (12128): Elaborating entity "twoInputOr" for hierarchy "twoInputOr:forAandCOutputs" File: E:/Quartus-Lite/Cursach/main.v Line: 130
-Info (12128): Elaborating entity "clockwise" for hierarchy "clockwise:firstClock" File: E:/Quartus-Lite/Cursach/main.v Line: 133
+Info (12128): Elaborating entity "comparator" for hierarchy "comparator:COMPARATOR_1" File: E:/Quartus-Lite/Cursach/main.v Line: 105
+Info (12128): Elaborating entity "twoInputXor" for hierarchy "twoInputXor:forALessThanB" File: E:/Quartus-Lite/Cursach/main.v Line: 108
+Info (12128): Elaborating entity "twoInputOr" for hierarchy "twoInputOr:forAandCOutputs" File: E:/Quartus-Lite/Cursach/main.v Line: 112
+Info (12128): Elaborating entity "clockwise" for hierarchy "clockwise:firstClock" File: E:/Quartus-Lite/Cursach/main.v Line: 115
 Warning (10036): Verilog HDL or VHDL warning at main.v(9): object "clk_dt" assigned a value but never read File: E:/Quartus-Lite/Cursach/main.v Line: 9
 Warning (10755): Verilog HDL warning at main.v(11): assignments to clk create a combinational loop File: E:/Quartus-Lite/Cursach/main.v Line: 11
 Warning (10175): Verilog HDL warning at main.v(24): ignoring unsupported system task File: E:/Quartus-Lite/Cursach/main.v Line: 24
+Info (12128): Elaborating entity "counter" for hierarchy "counter:COUNTER_1" File: E:/Quartus-Lite/Cursach/main.v Line: 121
+Warning (10230): Verilog HDL assignment warning at main.v(38): truncated value with size 32 to match size of target (4) File: E:/Quartus-Lite/Cursach/main.v Line: 38
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 22 warnings
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 21 warnings
     Info: Peak virtual memory: 4710 megabytes
-    Info: Processing ended: Mon Apr 20 22:30:42 2020
+    Info: Processing ended: Mon Apr 20 23:07:20 2020
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
 
 

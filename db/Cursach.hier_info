@@ -1,36 +1,6 @@
 |Cursach
 
 
-|Cursach|counter:COUNTER_1
-reset => cnt.OUTPUTSELECT
-reset => cnt.OUTPUTSELECT
-reset => cnt.OUTPUTSELECT
-reset => cnt.OUTPUTSELECT
-clk => cnt[0]~reg0.CLK
-clk => cnt[1]~reg0.CLK
-clk => cnt[2]~reg0.CLK
-clk => cnt[3]~reg0.CLK
-cnt[0] <= cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-cnt[1] <= cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-cnt[2] <= cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-cnt[3] <= cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Cursach|counter:COUNTER_2
-reset => cnt.OUTPUTSELECT
-reset => cnt.OUTPUTSELECT
-reset => cnt.OUTPUTSELECT
-reset => cnt.OUTPUTSELECT
-clk => cnt[0]~reg0.CLK
-clk => cnt[1]~reg0.CLK
-clk => cnt[2]~reg0.CLK
-clk => cnt[3]~reg0.CLK
-cnt[0] <= cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-cnt[1] <= cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-cnt[2] <= cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-cnt[3] <= cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |Cursach|comparator:COMPARATOR_1
 A => always0.IN0
 A => LessThan0.IN1
@@ -63,7 +33,7 @@ secondIn => out.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Cursach|twoInputXor:forAEqualThanB
+|Cursach|twoInputXor:forAEqualB
 firstIn => out.IN0
 secondIn => out.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
@@ -99,5 +69,35 @@ out <= out.DB_MAX_OUTPUT_PORT_TYPE
 firstIn => out.IN0
 secondIn => out.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|counter:COUNTER_1
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+clk => cnt[0]~reg0.CLK
+clk => cnt[1]~reg0.CLK
+clk => cnt[2]~reg0.CLK
+clk => cnt[3]~reg0.CLK
+cnt[0] <= cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[1] <= cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[2] <= cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[3] <= cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Cursach|counter:COUNTER_2
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+reset => cnt.OUTPUTSELECT
+clk => cnt[0]~reg0.CLK
+clk => cnt[1]~reg0.CLK
+clk => cnt[2]~reg0.CLK
+clk => cnt[3]~reg0.CLK
+cnt[0] <= cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[1] <= cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[2] <= cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cnt[3] <= cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
